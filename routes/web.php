@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MenuController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,10 +14,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware'=>['guest']],function (){
+
+    Route::get('/', function () {
+        return view('auth.login');
+    });
+
 });
-Route::get('index', function () {
-   return view('index');
-});
+
+Route::resource('menu',MenuController::class);
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

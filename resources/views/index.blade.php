@@ -156,8 +156,7 @@
                             <!-- Boxed List -->
                 <div class="boxed-list" data-category-image="الحلويات">
                     <div class="boxed-list-headline">
-                        <h3><i class="icon-material-outline"></i> الحلويات
-                        </h3>
+                        <h3><i class="icon-material-outline"></i> الحلويات</h3>
                     </div>
                     <div class="box-item">
                         <div class="row">
